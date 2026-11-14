@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Je révise le français – 2AM – Le conte merveilleux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F0FF;--ink:#2B2D42;--muted:#6B6F80;--good:#12B886;--bad:#F03E3E;--gold:#FECA57}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',sans-serif;font-size:18px;line-height:1.65;
+ background-image:radial-gradient(#D9CFFF 1.5px,transparent 1.5px);background-size:26px 26px}
+h1,h2,h3,.btn,.ttl{font-family:'Baloo 2',sans-serif}
+.gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin-top:6px}.gw{display:flex;align-items:center;gap:8px;background:#FAF8FF;border-radius:14px;padding:6px 10px}.gw b{flex:1}.gw .say{width:30px;height:30px;font-size:14px}body.noar .arh{display:none!important}
+.ar{font-family:'Tajawal',sans-serif;direction:rtl;unicode-bidi:isolate;color:#7a5af8;font-size:.92em}
+.wrap{max-width:920px;margin:0 auto;padding:18px 14px 60px}
+.hero{text-align:center;padding:20px 10px 6px}
+.hero h1{font-size:clamp(28px,5.5vw,44px);margin:0;line-height:1.15}
+.hero h1 .c1{color:#FF6B6B}.hero h1 .c2{color:#FF9F43}.hero h1 .c3{color:#1DD1A1}.hero h1 .c4{color:#54A0FF}.hero h1 .c5{color:#9B6BFF}
+.hero p{margin:6px 0 0;color:var(--muted)}
+.castle{font-size:46px;letter-spacing:6px}
+.stars{display:inline-block;margin-top:10px;background:#fff;border:3px solid var(--gold);border-radius:40px;padding:3px 18px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:16px;margin-top:22px}
+.card{background:#fff;border-radius:24px;padding:16px;cursor:pointer;border:4px solid var(--c);box-shadow:0 6px 0 var(--c);text-align:center;position:relative;transition:transform .15s}
+.card:hover{transform:translateY(-4px) rotate(1deg)}
+.card .emo{font-size:42px;line-height:1.1}
+.card .ttl{font-size:19px;font-weight:800;line-height:1.25;margin-top:4px}
+.card .mini{font-size:14px;color:var(--muted)}
+.card .num{position:absolute;top:-12px;left:-10px;background:var(--c);color:#fff;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800}
+.card .prog{font-size:13px;margin-top:4px;font-weight:800;color:var(--c)}
+section.lesson{display:none}section.lesson.show{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.btn{border:3px solid var(--ink);background:#fff;border-radius:40px;padding:6px 18px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 4px 0 var(--ink);color:var(--ink)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.banner{background:var(--c);color:#fff;border-radius:28px;padding:16px 20px;display:flex;gap:14px;align-items:center;box-shadow:0 6px 0 rgba(0,0,0,.12)}
+.banner .emo{font-size:48px;background:#fff;border-radius:50%;width:72px;height:72px;display:grid;place-items:center;flex:none}
+.banner h2{margin:0;font-size:clamp(23px,4vw,31px);line-height:1.2}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 4px}
+.tab{border:3px solid var(--c);background:#fff;color:var(--ink);border-radius:16px;padding:6px 14px;font-weight:800;cursor:pointer;font-family:'Baloo 2';font-size:17px}
+.tab.on{background:var(--c);color:#fff}
+.pane{display:none}.pane.on{display:block}
+.box{background:#fff;border-radius:22px;padding:14px 18px;margin-top:12px;border-left:10px solid var(--c);box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.box h3{margin:0 0 4px;font-size:21px;color:var(--c2)}
+.box p{margin:5px 0}.box ul{margin:4px 0;padding-left:22px}
+.hl{background:#FFF3B0;border-radius:6px;padding:0 4px;font-weight:800}
+.k{font-weight:800;color:var(--c2)}
+.tip{background:#E7FFF6;border:3px solid #1DD1A1;border-radius:20px;padding:10px 16px;margin-top:12px}
+.tip b.t{color:#0b8f6c}
+.warn{background:#FFF0F0;border:3px solid #FF6B6B;border-radius:20px;padding:10px 16px;margin-top:12px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.pill{flex:1 1 150px;background:#fff;border:3px solid var(--pc);border-radius:18px;padding:8px 12px;text-align:center}
+.pill b{display:block;color:var(--pc);font-size:18px}.pill span{font-size:15px;color:var(--muted)}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:16px;overflow:hidden;margin-top:8px;font-size:17px}
+th{background:var(--c);color:#fff;padding:7px}td{padding:6px 8px;text-align:center;border-top:1px solid #eee}
+tr:nth-child(even) td{background:#FAF8FF}
+.end{color:#e8590c;font-weight:800}
+.ex{background:#fff;border-radius:16px;padding:9px 14px;margin-top:9px;border:2px solid #eee;display:flex;gap:10px;align-items:flex-start}
+.ex .txt{flex:1}
+.say{border:none;background:var(--c);color:#fff;border-radius:50%;width:34px;height:34px;font-size:16px;cursor:pointer;flex:none}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;margin-top:10px}
+.flow .st{background:var(--sc);color:#fff;border-radius:16px;padding:8px 12px;font-weight:800;text-align:center;flex:1 1 140px;font-size:16px}
+.flow .ar2{font-size:22px;color:var(--muted)}
+.vid{display:block;background:#fff;border:3px solid #FF4D4D;border-radius:18px;padding:10px 14px;margin-top:10px;text-decoration:none;color:var(--ink);font-weight:700}
+.vid:hover{background:#FFF0F0}
+.vid small{display:block;color:var(--muted);font-weight:400}
+/* games */
+.game{background:#fff;border-radius:22px;padding:14px 16px;margin-top:16px;border:3px dashed var(--c)}
+.ghead{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.ghead h3{margin:0;font-size:20px}
+.score{background:var(--gold);border-radius:30px;padding:2px 14px;font-weight:800}
+.consigne{color:var(--muted);margin:4px 0 8px}
+.q{border:3px solid #eee;border-radius:18px;padding:10px 14px;margin-top:10px}
+.q.ok{border-color:var(--good);background:#F1FFF8}.q.no{border-color:var(--bad);background:#FFF6F6}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.opt{font-family:'Nunito';font-size:17px;font-weight:800;border:3px solid #ddd;background:#fff;border-radius:14px;padding:5px 14px;cursor:pointer;flex:1 1 130px}
+.opt:hover:not(:disabled){border-color:var(--c)}
+.opt.right{background:var(--good);border-color:var(--good);color:#fff}.opt.wrong{background:var(--bad);border-color:var(--bad);color:#fff}
+.fb{display:none;margin-top:6px;font-size:16px}.q.ok .fb,.q.no .fb{display:block}
+.pool{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;padding:8px;background:#FAF8FF;border-radius:14px}
+.chip{background:#fff;border:3px solid var(--c);border-radius:30px;padding:4px 12px;font-weight:800;cursor:pointer;font-size:16px;user-select:none}
+.chip.sel{background:var(--c);color:#fff;transform:scale(1.08)}
+.chip.done{border-color:var(--good);background:#E6FCF5;cursor:default}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+.cat{border:3px solid var(--c);border-radius:16px;min-height:90px;padding:6px;cursor:pointer;background:#fff}
+.cat .cn{font-family:'Baloo 2';font-weight:800;text-align:center;color:var(--c2);font-size:17px}
+.cat .in{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.shake{animation:shake .4s}@keyframes shake{25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-4px)}}
+.flash-bad{background:#FFE3E3!important}
+.olist{counter-reset:o;margin-top:10px}
+.oitem{background:#E6FCF5;border:3px solid var(--good);border-radius:14px;padding:6px 12px;margin-top:6px;font-weight:700}
+.ocard{background:#fff;border:3px solid var(--c);border-radius:14px;padding:6px 12px;margin-top:6px;cursor:pointer;font-weight:700}
+.mem{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:8px}
+.mc{height:78px;border-radius:14px;background:var(--c);color:#fff;display:grid;place-items:center;text-align:center;font-weight:800;cursor:pointer;padding:4px;font-size:15px;line-height:1.2}
+.mc.up{background:#fff;color:var(--ink);border:3px solid var(--c)}
+.mc.got{background:#E6FCF5;color:var(--ink);border:3px solid var(--good);cursor:default}
+.ti{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;align-items:center}
+.ti input{font-family:'Nunito';font-size:17px;padding:5px 10px;border-radius:12px;border:3px solid #ddd;min-width:160px;flex:1}
+.ti input.okk{border-color:var(--good);background:#F1FFF8}.ti input.bad{border-color:var(--bad)}
+.ti button{font-family:'Nunito';font-weight:800;border-radius:12px;border:3px solid var(--c);background:#fff;padding:4px 12px;cursor:pointer}
+.ans{font-size:15px;color:var(--muted)}
+.win{display:none;text-align:center;font-weight:800;font-size:20px;margin-top:10px}
+.nav2{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:24px}
+.timer{font-family:'Baloo 2';font-size:28px;font-weight:800;text-align:center}
+footer{text-align:center;color:var(--muted);font-size:15px;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+ <div class="castle">🏰🧚‍♀️🐉</div>
+ <h1><span class="c1">Je</span> <span class="c2">révise</span> <span class="c3">le</span> <span class="c4">français</span> <span class="c5">!</span></h1>
+ <p>2<sup>e</sup> année moyenne 🇩🇿 — Projet 1 : <b>le conte merveilleux</b><br>Leçon 📘 ➜ Exemples 🔊 ➜ Jeux 🎮 ➜ Vidéos ▶️</p>
+ <div class="stars" id="stars">⭐ Mes étoiles : 0</div> <button class="btn" id="artog" style="margin-top:10px">🇩🇿 Aide en arabe : OUI</button>
+</header>
+<div id="home"><div class="grid" id="grid"></div>
+ <div class="tip" style="margin-top:24px"><b class="t">💡 Comment réviser ?</b> Choisis une leçon, lis la leçon, écoute les exemples avec 🔊, puis joue aux jeux. Chaque bonne réponse = une étoile ⭐. À la fin, essaie le <b>Défi chrono</b> ⏱️ !</div>
+</div>
+<div id="lessons"></div>
+<footer>Bravo champion ! 🌟 Un peu chaque jour, c'est le secret. <span class="ar">قليل دائم خير من كثير منقطع</span></footer>
+</div>
+
+<script>
+/* ---------- helpers ---------- */
+const yt=q=>'https://www.youtube.com/results?search_query='+encodeURIComponent(q);
+const S=(t)=>`<button class="say" data-say="${t.replace(/"/g,'&quot;')}" title="Écouter">🔊</button>`;
+const EX=(html,say,tr)=>`<div class="ex">${S(say||html.replace(/<[^>]+>/g,''))}<div class="txt">${html}${tr?`<div class="ar arh" style="display:block;margin-top:4px;color:#7a5af8">🇩🇿 ${tr}</div>`:''}</div></div>`;
+function speak(t){try{const u=new SpeechSynthesisUtterance(t);u.lang='fr-FR';u.rate=.85;
+  const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.startsWith('fr'));if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+document.addEventListener('click',e=>{const b=e.target.closest('.say');if(b)speak(b.dataset.say)});
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const norm=s=>s.toLowerCase().replace(/[’`]/g,"'").replace(/\s+/g,' ').trim();
+
+/* ---------- LESSONS ---------- */
+const L=[
+/* 1 */
+{id:'conte',emo:'🏰',c:'#9B6BFF',c2:'#6d3ee0',t:'Le conte merveilleux et son schéma',mini:'début ➜ problème ➜ aventures ➜ fin',
+lecon:`
+<div class="box"><h3>C'est quoi, un conte merveilleux ? <span class="ar">الحكاية العجيبة</span></h3>
+<p>C'est une <b>histoire imaginaire</b> où il se passe des choses <b>magiques</b> 🪄 : des fées, des sorcières, des animaux qui parlent, des objets magiques…</p>
+<ul><li><b>Personnages merveilleux :</b> la fée 🧚, la sorcière 🧙‍♀️, le magicien, l'ogre, le dragon 🐉, le poisson d'or 🐟</li>
+<li><b>Objets magiques :</b> la baguette magique, la potion, le miroir magique, la pantoufle de verre 👠</li>
+<li><b>Lieux :</b> un château 🏰, une forêt 🌲, un royaume, une cabane</li></ul></div>
+<div class="box"><h3>Le schéma narratif (les 4 étapes du conte) <span class="ar">البنية السردية</span></h3>
+<div class="flow">
+ <div class="st" style="--sc:#1DD1A1">1. Situation initiale<br><small>Il était une fois…</small></div><span class="ar2">➜</span>
+ <div class="st" style="--sc:#FF6B6B">2. Élément modificateur<br><small>Tout à coup…</small></div><span class="ar2">➜</span>
+ <div class="st" style="--sc:#FF9F43">3. Suite des événements<br><small>Alors… Ensuite…</small></div><span class="ar2">➜</span>
+ <div class="st" style="--sc:#54A0FF">4. Situation finale<br><small>C'est ainsi que…</small></div>
+</div>
+<p style="margin-top:10px">1️⃣ <b>Situation initiale :</b> on présente les personnages, le lieu et le temps. Tout est calme. Verbes à <span class="hl">l'imparfait</span>.</p>
+<p>2️⃣ <b>Élément modificateur</b> (perturbateur) : un problème arrive et change tout ! <span class="ar">العنصر المغيّر</span></p>
+<p>3️⃣ <b>Suite des événements</b> (les péripéties) : le héros vit des aventures pour régler le problème.</p>
+<p>4️⃣ <b>Situation finale :</b> le problème est réglé. Souvent : « <i>Ils vécurent heureux…</i> »</p></div>
+<div class="box"><h3>Mon projet : 3 séquences 📚</h3>
+<p>🎭 Situation de départ : ton école organise une fête de fin de trimestre, tu vas présenter un conte merveilleux sous forme de <b>saynète</b> (petite pièce de théâtre).</p>
+<ul><li><b>Séquence 1 :</b> Entrer dans le monde du merveilleux (la situation initiale)</li>
+<li><b>Séquence 2 :</b> Tout à coup… (la suite des événements)</li>
+<li><b>Séquence 3 :</b> C'est ainsi que… (la situation finale)</li></ul></div>
+<div class="tip"><b class="t">💡 Astuce :</b> Pense à un gâteau 🎂 : <b>avant</b> (tout est calme), <b>problème</b> (le gâteau tombe !), <b>actions</b> (on en refait un), <b>fin</b> (tout le monde mange content).</div>`,
+exemples:[
+ ['<b>Situation initiale :</b> Il était une fois une petite fille qui allait cueillir des fleurs loin de la maison.'],
+ ['<b>Élément modificateur :</b> Tout à coup, une méchante sorcière fit disparaître le chemin qui mène à la maison.'],
+ ['<b>Suite :</b> « Tu ne reverras plus tes parents ! » dit la sorcière. La fée consola la petite fille et lui promit de l\'aider à revenir à la maison.'],
+ ['<b>Cendrillon :</b> Cendrillon était une fille maltraitée par sa belle-mère et ses filles. Un jour, le prince annonça un bal dans le royaume. Une fée arriva et transforma Cendrillon en une belle princesse.']
+],
+videos:[['Le schéma narratif du conte','schéma narratif conte situation initiale élément perturbateur'],['Écouter des contes merveilleux en français','conte merveilleux en français pour enfants'],['Cendrillon – conte en français','Cendrillon conte en français']],
+games:[
+ {type:'order',title:'🧩 Remets le conte dans l\'ordre',consigne:'Touche les étapes dans le bon ordre (1 ➜ 5).',
+  items:['Il était une fois une jeune fille gentille qui vivait avec sa méchante belle-mère.','Un jour, le prince annonça un grand bal au château.','Tout à coup, une fée apparut et transforma la jeune fille en princesse.','Au bal, le prince dansa avec elle, mais à minuit elle s\'enfuit et perdit sa pantoufle.','C\'est ainsi que le prince la retrouva et l\'épousa. Ils vécurent heureux.']},
+ {type:'sort',title:'🗂️ Début, problème ou fin ?',consigne:'Touche une phrase puis touche la bonne boîte.',
+  cats:['Situation initiale','Élément modificateur','Situation finale'],
+  items:[['Il était une fois un roi…',0],['Autrefois vivait un pêcheur…',0],['Tout à coup, un dragon arriva.',1],['Soudain, la sorcière apparut.',1],['Ils vécurent heureux.',2],['C\'est ainsi que le roi retrouva sa fille.',2],['Un jour, la princesse disparut.',1],['Depuis ce jour, tout le monde fut content.',2]]},
+ {type:'qcm',title:'❓ Quiz',qs:[
+  {q:'Dans quelle partie présente-t-on les personnages, le lieu et le temps ?',o:['La situation initiale','L\'élément modificateur','La situation finale'],a:0},
+  {q:'« Tout à coup, la sorcière jeta un sort. » C\'est :',o:['la situation initiale','l\'élément modificateur','la situation finale'],a:1},
+  {q:'Lequel est un personnage merveilleux ?',o:['le boulanger','la fée','le professeur'],a:1},
+  {q:'Une saynète, c\'est :',o:['une petite pièce de théâtre','un poème','une chanson'],a:0},
+  {q:'Le conte merveilleux raconte une histoire :',o:['vraie','imaginaire avec de la magie','scientifique'],a:1}
+ ]}
+]},
+/* 2 */
+{id:'ouverture',emo:'🗝️',c:'#FF7EB6',c2:'#d6336c',t:'Formules d\'ouverture et mots de la même famille',mini:'Il était une fois… / magie, magicien, magique',
+lecon:`
+<div class="box"><h3>1. Les formules d'ouverture <span class="ar">عبارات الافتتاح</span></h3>
+<p>Le conte commence <b>généralement</b> par une <b>formule d'ouverture</b>. Elle nous emmène dans un <b>passé lointain</b> ⏳ :</p>
+<div class="pills">
+ <div class="pill" style="--pc:#FF7EB6"><b>Il était une fois…</b></div>
+ <div class="pill" style="--pc:#9B6BFF"><b>Autrefois…</b></div>
+ <div class="pill" style="--pc:#54A0FF"><b>Jadis…</b></div>
+ <div class="pill" style="--pc:#1DD1A1"><b>Il y a bien longtemps…</b></div>
+ <div class="pill" style="--pc:#FF9F43"><b>Dans les temps anciens…</b></div>
+ <div class="pill" style="--pc:#FF6B6B"><b>On raconte qu'aux temps anciens…</b></div>
+</div></div>
+<div class="box"><h3>2. Les mots de la même famille <span class="ar">كلمات من نفس العائلة</span></h3>
+<p>Ce sont des mots qui ont <b>le même radical</b> (la même racine) 🌳.</p>
+<table><tr><th>Radical</th><th>Les mots de la famille</th></tr>
+<tr><td><b>mag</b></td><td>magie – magicien – magicienne – magique</td></tr>
+<tr><td><b>fleur</b></td><td>fleur – fleurir – fleuriste – fleuri</td></tr>
+<tr><td><b>jardin</b></td><td>jardin – jardinier – jardiner – jardinage</td></tr>
+<tr><td><b>chant</b></td><td>chanter – chanteur – chanson – chant</td></tr>
+<tr><td><b>pêch</b></td><td>pêche – pêcheur – pêcher</td></tr>
+<tr><td><b>roi</b></td><td>roi – royaume – royal – reine</td></tr>
+</table></div>
+<div class="tip"><b class="t">💡 Astuce :</b> cherche le « morceau » qui se répète dans les mots : <b>jardin</b>ier, <b>jardin</b>age… c'est le radical !</div>`,
+exemples:[
+ ['<b>Il y a bien longtemps</b>, un prince voulait épouser une véritable princesse. Il fit donc le tour du monde pour en trouver une.'],
+ ['<b>Il était une fois</b> une <b>magicienne</b> qui vivait dans un village lointain. Chaque matin, elle préparait sa potion <b>magique</b>.'],
+ ['<b>Jadis</b>, un vieux roi habitait dans un château au sommet d\'une montagne.']
+],
+videos:[['Les mots de la même famille','mots de la même famille cours français'],['Les formules d\'ouverture du conte','formules d\'ouverture du conte']],
+games:[
+ {type:'memory',title:'🃏 Memory des familles',consigne:'Retourne deux cartes : trouve les mots de la même famille.',
+  pairs:[['magie','magicien'],['fleur','fleuriste'],['jardin','jardinier'],['pêche','pêcheur'],['chanter','chanson'],['roi','royaume']]},
+ {type:'sort',title:'🌳 Range dans la bonne famille',consigne:'Touche un mot puis touche sa famille.',
+  cats:['Famille de « terre »','Famille de « lait »','Famille de « dent »'],
+  items:[['terrain',0],['enterrer',0],['terrestre',0],['laitier',1],['allaiter',1],['dentiste',2],['dentifrice',2],['dentier',2]]},
+ {type:'qcm',title:'❓ Trouve l\'intrus',qs:[
+  {q:'Quel mot n\'est PAS de la famille de « magie » ?',o:['magique','magicien','magasin'],a:2,w:'« magasin » n\'a rien à voir avec la magie !'},
+  {q:'Quel mot n\'est PAS de la famille de « fleur » ?',o:['fleurir','flûte','fleuriste'],a:1},
+  {q:'Quelle est une formule d\'ouverture ?',o:['Il était une fois','Ils vécurent heureux','Tout à coup'],a:0},
+  {q:'« Jadis » veut dire :',o:['demain','autrefois, il y a très longtemps','tout à coup'],a:1},
+  {q:'Le radical de « jardinier » est :',o:['jard','jardin','ier'],a:1}
+ ]}
+]},
+/* 3 */
+{id:'situation',emo:'🌅',c:'#1DD1A1',c2:'#0e9c77',t:'La situation initiale',mini:'Qui ? Où ? Quand ? Quoi ?',
+lecon:`
+<div class="box"><h3>La situation initiale répond à 4 questions <span class="ar">الوضعية الأولية</span></h3>
+<div class="pills">
+ <div class="pill" style="--pc:#FF9F43"><b>⏳ Quand ?</b><span>Il était une fois, Autrefois, Jadis…</span></div>
+ <div class="pill" style="--pc:#9B6BFF"><b>👤 Qui ?</b><span>un pauvre pêcheur, une princesse…</span></div>
+ <div class="pill" style="--pc:#54A0FF"><b>📍 Où ?</b><span>dans une petite cabane, près de la forêt…</span></div>
+ <div class="pill" style="--pc:#FF6B6B"><b>🎬 Quoi ?</b><span>ce que fait le personnage : vivait, cueillait…</span></div>
+</div></div>
+<div class="box"><h3>✅ Critères de réussite (pour bien écrire)</h3>
+<ul><li>Je commence ma situation initiale par une <b>formule d'ouverture</b>.</li>
+<li>J'indique les <b>personnages</b> de l'histoire.</li>
+<li>J'indique le <b>lieu</b> et le <b>temps</b> de l'histoire.</li>
+<li>Je conjugue mes verbes à <span class="hl">l'imparfait</span>.</li></ul></div>
+<div class="tip"><b class="t">💡 Formule magique :</b> Formule d'ouverture + personnage + « qui » + verbe à l'imparfait + lieu.<br>➜ <i>Il était une fois</i> + <i>un pêcheur</i> + <i>qui vivait</i> + <i>au bord de la mer</i>.</div>`,
+exemples:[
+ ['<b>Il était une fois</b>, <b>un pêcheur et sa femme</b> qui <b>vivaient</b> <b>dans une petite cabane près de la forêt</b>.','Il était une fois, un pêcheur et sa femme qui vivaient dans une petite cabane près de la forêt.'],
+ ['<b>Il y a longtemps</b>, au Mexique, vivait une horrible sorcière appelée Cucaracha. Elle était maigre à faire peur et sèche comme un vieux parchemin.'],
+ ['Il y a bien longtemps, dans une forêt, un pauvre bûcheron coupait du bois qu\'il vendait au marché.'],
+ ['Il était une fois, un homme et sa femme qui vivaient avec leurs deux enfants, un garçon et une fille, dans une tente au milieu du désert.']
+],
+videos:[['La situation initiale d\'un conte','situation initiale conte qui où quand'],['Écrire le début d\'un conte','écrire le début d\'un conte il était une fois']],
+games:[
+ {type:'sort',title:'🗂️ Quand ? Qui ? Où ?',consigne:'Range chaque morceau de phrase.',
+  cats:['⏳ Quand ?','👤 Qui ?','📍 Où ?'],
+  items:[['Il était une fois',0],['Jadis',0],['Autrefois',0],['un vieux roi',1],['une jeune fille',1],['un pauvre bûcheron',1],['dans un château',2],['au bord de la mer',2],['près de la forêt',2]]},
+ {type:'order',title:'🧱 Construis la phrase',consigne:'Touche les morceaux dans l\'ordre pour faire une belle situation initiale.',
+  items:['Il était une fois','un jardinier','qui vivait','au bord d\'une rivière.','Chaque matin,','il arrosait ses fleurs avec soin.']},
+ {type:'qcm',title:'❓ Quiz',qs:[
+  {q:'À quel temps sont les verbes de la situation initiale ?',o:['au futur','à l\'imparfait','au présent'],a:1},
+  {q:'« dans une petite cabane » répond à la question :',o:['Quand ?','Qui ?','Où ?'],a:2},
+  {q:'« une méchante reine » répond à la question :',o:['Qui ?','Où ?','Quand ?'],a:0},
+  {q:'Quelle phrase est une bonne situation initiale ?',o:['Tout à coup, le loup arriva.','Il était une fois une princesse qui vivait dans un grand château.','Ils vécurent heureux.'],a:1}
+ ]}
+]},
+/* 4 */
+{id:'cc',emo:'🧭',c:'#54A0FF',c2:'#1971c2',t:'Les compléments circonstanciels',mini:'CCL (où ?) – CCT (quand ?) – CCM (comment ?)',
+lecon:`
+<div class="box"><h3>Le complément circonstanciel précise les circonstances <span class="ar">المفعول فيه / الحال</span></h3>
+<div class="pills">
+ <div class="pill" style="--pc:#1DD1A1"><b>CCL 📍</b><span>Complément circonstanciel de <b>lieu</b><br>répond à <b>Où ?</b></span></div>
+ <div class="pill" style="--pc:#FF9F43"><b>CCT ⏰</b><span>Complément circonstanciel de <b>temps</b><br>répond à <b>Quand ?</b></span></div>
+ <div class="pill" style="--pc:#9B6BFF"><b>CCM 🎨</b><span>Complément circonstanciel de <b>manière</b><br>répond à <b>Comment ?</b></span></div>
+</div></div>
+<div class="box"><h3>Comment le trouver ? 🔍</h3>
+<p>On pose la question <b>après le verbe</b> :</p>
+<p>Le pêcheur vivait <b>au bord de la mer</b>. ➜ Il vivait <b>où</b> ? ➜ au bord de la mer = <span class="hl">CCL</span></p>
+<p><b>Au lever du jour</b>, Slimane allait à la pêche. ➜ <b>Quand</b> ? ➜ au lever du jour = <span class="hl">CCT</span></p>
+<p>Le poisson lui parla <b>gentiment</b>. ➜ <b>Comment</b> ? ➜ gentiment = <span class="hl">CCM</span></p></div>
+<div class="tip"><b class="t">💡 Astuce :</b> Les mots en <b>-ment</b> (gentiment, joyeusement, tranquillement) sont très souvent des <b>CCM</b>. Et le CC peut souvent être <b>déplacé</b> ou <b>supprimé</b> : la phrase reste correcte !</div>`,
+exemples:[
+ ['Il était une fois un pêcheur qui vivait <b>au bord de la mer</b>. ➜ CCL','Il était une fois un pêcheur qui vivait au bord de la mer.'],
+ ['Le pêcheur et sa femme habitaient une misérable cabane <b>depuis plusieurs années</b>. ➜ CCT','Le pêcheur et sa femme habitaient une misérable cabane depuis plusieurs années.'],
+ ['Le poisson d\'or lui parla <b>d\'une voix humaine</b> et lui demanda <b>gentiment</b> de le relâcher. ➜ CCM','Le poisson d\'or lui parla d\'une voix humaine et lui demanda gentiment de le relâcher.'],
+ ['La petite fille allait <b>joyeusement</b> rendre visite à sa grand-mère. ➜ CCM','La petite fille allait joyeusement rendre visite à sa grand-mère.']
+],
+videos:[['Les compléments circonstanciels (lieu, temps, manière)','complément circonstanciel de lieu temps manière cours'],['Exercices CCL CCT CCM','exercices compléments circonstanciels lieu temps manière']],
+games:[
+ {type:'sort',title:'🧭 CCL, CCT ou CCM ?',consigne:'Touche un groupe de mots puis sa boîte.',
+  cats:['📍 CCL (où ?)','⏰ CCT (quand ?)','🎨 CCM (comment ?)'],
+  items:[['dans la forêt',0],['au sommet d\'une montagne',0],['près du château',0],['chaque matin',1],['à minuit',1],['autrefois',1],['avec soin',2],['tranquillement',2],['en courant',2],['dans sa petite maison',0],['le lendemain',1],['joyeusement',2]]},
+ {type:'qcm',title:'❓ Quel est le complément ?',qs:[
+  {q:'« Le pêcheur et sa femme se retrouvent dans leur petite maison. » Le CC est :',o:['CCL','CCT','CCM'],a:0},
+  {q:'« Au lever du jour, Slimane allait à la pêche. » « Au lever du jour » est :',o:['CCL','CCT','CCM'],a:1},
+  {q:'« Le roi se promenait tranquillement dans son jardin. » « tranquillement » est :',o:['CCL','CCT','CCM'],a:2},
+  {q:'Le CCT répond à la question :',o:['Où ?','Quand ?','Comment ?'],a:1},
+  {q:'« Chaque soir, la fée volait au-dessus du royaume. » Trouve le CCT :',o:['Chaque soir','la fée','au-dessus du royaume'],a:0},
+  {q:'Même phrase : « au-dessus du royaume » est :',o:['CCL','CCT','CCM'],a:0}
+ ]}
+]},
+/* 5 */
+{id:'imparfait',emo:'⏳',c:'#FF9F43',c2:'#d9480f',t:'L\'imparfait de l\'indicatif',mini:'-ais -ais -ait -ions -iez -aient',
+lecon:`
+<div class="box"><h3>Quand utilise-t-on l'imparfait ? <span class="ar">الماضي الناقص</span></h3>
+<p>Dans le conte, on utilise l'imparfait pour <b>décrire</b> (personnages, lieux) et pour les <b>habitudes</b> dans le passé. C'est le temps de la <b>situation initiale</b> 🌅.</p></div>
+<div class="box"><h3>Les terminaisons (je retiens) 🎯</h3>
+<table><tr><th>Personne</th><th>1<sup>er</sup> et 3<sup>e</sup> groupe</th><th>2<sup>e</sup> groupe</th></tr>
+<tr><td>je</td><td>chant<span class="end">ais</span></td><td>fin<span class="end">issais</span></td></tr>
+<tr><td>tu</td><td>chant<span class="end">ais</span></td><td>fin<span class="end">issais</span></td></tr>
+<tr><td>il / elle</td><td>chant<span class="end">ait</span></td><td>fin<span class="end">issait</span></td></tr>
+<tr><td>nous</td><td>chant<span class="end">ions</span></td><td>fin<span class="end">issions</span></td></tr>
+<tr><td>vous</td><td>chant<span class="end">iez</span></td><td>fin<span class="end">issiez</span></td></tr>
+<tr><td>ils / elles</td><td>chant<span class="end">aient</span></td><td>fin<span class="end">issaient</span></td></tr></table></div>
+<div class="box"><h3>Être et avoir (auxiliaires) ⭐</h3>
+<table><tr><th>être</th><th>avoir</th></tr>
+<tr><td>j'étais</td><td>j'avais</td></tr><tr><td>tu étais</td><td>tu avais</td></tr><tr><td>il/elle était</td><td>il/elle avait</td></tr>
+<tr><td>nous étions</td><td>nous avions</td></tr><tr><td>vous étiez</td><td>vous aviez</td></tr><tr><td>ils/elles étaient</td><td>ils/elles avaient</td></tr></table></div>
+<div class="box"><h3>Les 3 groupes de verbes</h3>
+<p>1<sup>er</sup> groupe : verbes en <b>-er</b> (aimer, habiter, chanter) — 2<sup>e</sup> groupe : verbes en <b>-ir</b> qui font <b>-issons</b> (finir, choisir, réfléchir) — 3<sup>e</sup> groupe : les autres (croire, vouloir, s'entendre, prendre…)</p></div>
+<div class="warn"><b>⚠️ Attention :</b> manger ➜ je man<b>ge</b>ais (on garde le <b>e</b>) ; commencer ➜ je commen<b>ç</b>ais (le <b>ç</b>) ; mais nous mangions, nous commencions.</div>
+<div class="tip"><b class="t">💡 Astuce :</b> Pour trouver le radical, prends « nous » au présent et enlève <b>-ons</b> : nous <b>finiss</b>ons ➜ je <b>finiss</b>ais ; nous <b>croy</b>ons ➜ il <b>croy</b>ait.</div>`,
+exemples:[
+ ['Il <b>était</b> une fois une magicienne qui <b>avait</b> trois fils qui s\'<b>aimaient</b> et s\'<b>entendaient</b> fort bien.'],
+ ['Elle <b>croyait</b> qu\'ils <b>voulaient</b> lui prendre son pouvoir. Elle <b>réfléchissait</b> pour trouver une solution.'],
+ ['Les villageois <b>étaient</b> très contents de leur princesse.'],
+ ['Tu <b>saisissais</b> une allumette et le feu <b>jaillissait</b> tout de suite.']
+],
+videos:[['L\'imparfait de l\'indicatif','imparfait de l\'indicatif cours'],['Chanson pour apprendre l\'imparfait','chanson imparfait conjugaison'],['Être et avoir à l\'imparfait','être et avoir à l\'imparfait']],
+games:[
+ {type:'type',title:'✍️ Conjugue à l\'imparfait',consigne:'Écris le verbe à l\'imparfait puis appuie sur ✔.',qs:[
+  ['Il était une fois un roi qui (habiter) ___ dans un immense château.','habitait'],
+  ['La princesse (porter) ___ une robe magnifique.','portait'],
+  ['Les fées (veiller) ___ sur le royaume.','veillaient'],
+  ['Les habitants (vivre) ___ heureux dans le village.','vivaient'],
+  ['Chaque matin, le jardinier (arroser) ___ les fleurs du palais.','arrosait'],
+  ['Nous (choisir) ___ un conte intéressant à lire.','choisissions'],
+  ['Je (vouloir) ___ apprendre à écrire des contes.','voulais'],
+  ['Vous (être) ___ dans la forêt.','étiez'],
+  ['Tu (avoir) ___ une baguette magique.','avais'],
+  ['Le petit garçon (manger) ___ rarement à sa faim.','mangeait']
+ ]},
+ {type:'memory',title:'🃏 Memory : personne + terminaison',consigne:'Associe le pronom à la bonne terminaison (1er groupe).',
+  pairs:[['je','-ais'],['il / elle','-ait'],['nous','-ions'],['vous','-iez'],['ils / elles','-aient'],['être (il)','était']]},
+ {type:'qcm',title:'❓ Quiz',qs:[
+  {q:'« nous » à l\'imparfait se termine par :',o:['-ons','-ions','-iez'],a:1},
+  {q:'Finir avec « ils » à l\'imparfait :',o:['ils finaient','ils finissaient','ils finirent'],a:1},
+  {q:'Manger avec « je » à l\'imparfait :',o:['je mangais','je mangeais','je mangeai'],a:1},
+  {q:'« s\'entendre » est un verbe du :',o:['1er groupe','2e groupe','3e groupe'],a:2},
+  {q:'« réfléchir » est un verbe du :',o:['1er groupe','2e groupe','3e groupe'],a:1},
+  {q:'Avoir avec « nous » :',o:['nous avons','nous avions','nous aviez'],a:1}
+ ]}
+]},
+/* 6 */
+{id:'adjectif',emo:'🎨',c:'#FF6B6B',c2:'#c92a2a',t:'L\'adjectif qualificatif et le complément du nom',mini:'une petite cabane / une cognée de fer',
+lecon:`
+<div class="box"><h3>1. L'adjectif qualificatif (adj) <span class="ar">الصفة</span></h3>
+<p>Il <b>décrit</b> le nom. Il est placé <b>avant ou après</b> le nom et il <span class="hl">s'accorde en genre et en nombre</span> avec le nom.</p>
+<table><tr><th></th><th>masculin</th><th>féminin</th></tr>
+<tr><td>singulier</td><td>un <b>petit</b> garçon</td><td>une <b>petite</b> fille</td></tr>
+<tr><td>pluriel</td><td>des <b>petits</b> garçons</td><td>des <b>petites</b> filles</td></tr></table>
+<p style="margin-top:6px">Féminin : on ajoute souvent <b>-e</b> ; pluriel : on ajoute souvent <b>-s</b>. ⚠️ beau ➜ belle, vieux ➜ vieille, méchant ➜ méchante, heureux ➜ heureuse.</p></div>
+<div class="box"><h3>2. Le complément du nom (CN) <span class="ar">المضاف إليه</span></h3>
+<p>Il <b>complète</b> le nom. Il est placé <b>après</b> le nom et il commence par une petite préposition : <span class="hl">de – du – en – à</span>.</p>
+<p>une cognée <b>de fer</b> • un jus <b>de pommes</b> • un thé <b>à la menthe</b> • une robe <b>en soie</b> • le gâteau <b>de la fête</b></p></div>
+<div class="tip"><b class="t">💡 Astuce :</b> l'adjectif = <b>un seul mot</b> qui décrit (grand, beau). Le CN = <b>préposition + nom</b> (de fer, à la menthe).</div>`,
+exemples:[
+ ['Il était une fois un <b>pauvre</b> (adj) bûcheron qui vivait au bord <b>d\'une rivière</b> (CN).','Il était une fois un pauvre bûcheron qui vivait au bord d\'une rivière.'],
+ ['Il avait une hache avec une cognée <b>de fer</b> (CN) pour couper le bois.','Il avait une hache avec une cognée de fer pour couper le bois.'],
+ ['Les <b>petits</b> (adj) enfants aiment le jus <b>de pommes</b> (CN).','Les petits enfants aiment le jus de pommes.'],
+ ['Le prince trouva un <b>grand</b> (adj) palais. Le gâteau <b>de la fête</b> (CN) est <b>délicieux</b> (adj).','Le prince trouva un grand palais. Le gâteau de la fête est délicieux.']
+],
+videos:[['L\'adjectif qualificatif','adjectif qualificatif cours accord'],['Le complément du nom','complément du nom cours']],
+games:[
+ {type:'sort',title:'🗂️ Adjectif ou complément du nom ?',consigne:'Regarde le mot en MAJUSCULES.',
+  cats:['🎨 Adjectif','🔗 Complément du nom'],
+  items:[['une BELLE princesse',0],['une baguette MAGIQUE',0],['un château DE PIERRE',1],['un thé À LA MENTHE',1],['un VIEUX roi',0],['une robe EN SOIE',1],['la fille DU ROI',1],['une forêt SOMBRE',0],['un sac DE PIÈCES D\'OR',1],['un ogre MÉCHANT',0]]},
+ {type:'qcm',title:'❓ Accorde l\'adjectif',qs:[
+  {q:'une ____ fée',o:['petit','petite','petits'],a:1},
+  {q:'des châteaux ____',o:['magnifique','magnifiques','magnifiquee'],a:1},
+  {q:'une ____ sorcière',o:['méchant','méchante','méchants'],a:1},
+  {q:'une ____ femme',o:['vieux','vieille','vieil'],a:1},
+  {q:'des princesses ____',o:['heureux','heureuses','heureuse'],a:1},
+  {q:'Le complément du nom commence par :',o:['de, du, à, en','le, la, les','et, ou, mais'],a:0}
+ ]}
+]},
+/* 7 */
+{id:'modif',emo:'⚡',c:'#00B8C9',c2:'#0b7285',t:'L\'élément modificateur et les personnages',mini:'Tout à coup, soudain, un jour… / honnête ≠ malhonnête',
+lecon:`
+<div class="box"><h3>1. La suite des événements commence par l'élément modificateur <span class="ar">العنصر المغيّر</span></h3>
+<p>C'est le <b>problème</b> qui arrive et qui change la situation calme du début. On l'annonce avec :</p>
+<div class="pills">
+ <div class="pill" style="--pc:#FF6B6B"><b>Tout à coup…</b></div>
+ <div class="pill" style="--pc:#FF9F43"><b>Soudain…</b></div>
+ <div class="pill" style="--pc:#9B6BFF"><b>Un jour…</b></div>
+ <div class="pill" style="--pc:#54A0FF"><b>Mais un matin…</b></div>
+</div>
+<p style="margin-top:8px">On l'appelle aussi l'<b>élément perturbateur</b>.</p></div>
+<div class="box"><h3>2. Le portrait moral des personnages 🧑‍🤝‍🧑</h3>
+<p>Dans les contes, il y a les <b>gentils</b> 😇 et les <b>méchants</b> 😈. Leur caractère est décrit par des adjectifs :</p>
+<table><tr><th>😇 Qualités</th><th>😈 Défauts (contraires)</th></tr>
+<tr><td>honnête</td><td>malhonnête</td></tr><tr><td>sincère</td><td>menteur</td></tr>
+<tr><td>généreux</td><td>avare</td></tr><tr><td>gentil</td><td>méchant</td></tr>
+<tr><td>courageux</td><td>peureux</td></tr><tr><td>intelligent</td><td>bête</td></tr>
+<tr><td>travailleur</td><td>paresseux</td></tr></table>
+<p style="margin-top:6px">Dans <i>Un homme malhonnête</i> : le bûcheron est <b>honnête, sincère</b> ; l'homme jaloux est <b>menteur, avare, malhonnête</b> ; le vieux à la barbe blanche est <b>petit, intelligent</b>.</p></div>
+<div class="tip"><b class="t">💡 Astuce :</b> on fait souvent le contraire avec <b>mal-</b> (honnête ➜ malhonnête, heureux ➜ malheureux) ou <b>in-/im-</b> (juste ➜ injuste, poli ➜ impoli).</div>`,
+exemples:[
+ ['<b>Tout à coup</b>, une méchante sorcière fit disparaître le chemin qui mène à la maison.'],
+ ['<b>Soudain</b>, la hache du bûcheron tomba dans la rivière.'],
+ ['<b>Un jour</b>, le prince annonça un bal dans le royaume.'],
+ ['Le bûcheron était <b>honnête</b> et <b>sincère</b>, mais son voisin était <b>menteur</b> et <b>avare</b>.']
+],
+videos:[['L\'élément perturbateur dans un conte','élément perturbateur conte cours'],['Les antonymes (les contraires)','les antonymes cours français contraires']],
+games:[
+ {type:'memory',title:'🃏 Memory des contraires',consigne:'Associe chaque qualité à son contraire.',
+  pairs:[['honnête','malhonnête'],['sincère','menteur'],['généreux','avare'],['gentil','méchant'],['courageux','peureux'],['heureux','malheureux']]},
+ {type:'sort',title:'😇 ou 😈 ?',consigne:'Range les adjectifs : qualité ou défaut ?',
+  cats:['😇 Qualité','😈 Défaut'],
+  items:[['honnête',0],['menteur',1],['généreux',0],['avare',1],['sincère',0],['malhonnête',1],['intelligent',0],['jaloux',1],['courageux',0],['paresseux',1]]},
+ {type:'qcm',title:'❓ Quiz',qs:[
+  {q:'Quelle expression annonce l\'élément modificateur ?',o:['Il était une fois','Tout à coup','Ils vécurent heureux'],a:1},
+  {q:'Le contraire de « honnête » :',o:['malhonnête','inhonnête','dishonnête'],a:0},
+  {q:'Le contraire de « généreux » :',o:['gentil','avare','sincère'],a:1},
+  {q:'L\'élément modificateur, c\'est :',o:['le problème qui change tout','la fin heureuse','la présentation des personnages'],a:0},
+  {q:'« Soudain » veut dire :',o:['lentement','tout à coup','autrefois'],a:1}
+ ]}
+]},
+/* 8 */
+{id:'rappels',emo:'🔁',c:'#7BC950',c2:'#2b8a3e',t:'Rappels : présent, phrases, contraires',mini:'évaluation diagnostique',
+lecon:`
+<div class="box"><h3>1. Le présent de l'indicatif</h3>
+<table><tr><th></th><th>pratiquer (1<sup>er</sup> gr.)</th><th>finir (2<sup>e</sup> gr.)</th></tr>
+<tr><td>je</td><td>pratiqu<span class="end">e</span></td><td>fin<span class="end">is</span></td></tr>
+<tr><td>tu</td><td>pratiqu<span class="end">es</span></td><td>fin<span class="end">is</span></td></tr>
+<tr><td>il/elle</td><td>pratiqu<span class="end">e</span></td><td>fin<span class="end">it</span></td></tr>
+<tr><td>nous</td><td>pratiqu<span class="end">ons</span></td><td>fin<span class="end">issons</span></td></tr>
+<tr><td>vous</td><td>pratiqu<span class="end">ez</span></td><td>fin<span class="end">issez</span></td></tr>
+<tr><td>ils/elles</td><td>pratiqu<span class="end">ent</span></td><td>fin<span class="end">issent</span></td></tr></table></div>
+<div class="box"><h3>2. Le sujet et le verbe</h3>
+<p>Le <b>sujet</b> fait l'action, le <b>verbe</b> dit l'action. Le verbe s'accorde avec son sujet : <i>Le jeune pratique le tennis ➜ Les jeunes pratiqu<b>ent</b> le tennis.</i></p></div>
+<div class="box"><h3>3. Les types de phrases</h3>
+<p>📢 <b>Phrase déclarative</b> : elle donne une information, elle finit par un point <b>.</b> — L'élève utilise l'IA.</p>
+<p>❓ <b>Phrase interrogative</b> : elle pose une question, elle finit par <b>?</b> — Utilises-tu l'IA ?</p></div>
+<div class="box"><h3>4. Synonymes, contraires et champ lexical</h3>
+<p><b>Synonymes</b> (même sens) : moderne = récent ; utile = qui sert ; pratique = commode.</p>
+<p><b>Contraires</b> (antonymes) : jeune ≠ vieux ; malade ≠ en forme.</p>
+<p><b>Champ lexical</b> : mots du même thème. Le sport ➜ compétition, natation, athlétisme, handball…</p></div>`,
+exemples:[
+ ['Les jeunes <b>pratiquent</b> le sport. Nous <b>aimons</b> la natation.'],
+ ['Vous <b>choisissez</b> une activité sportive. Les élèves <b>finissent</b> leur entraînement.'],
+ ['Le sport aide les jeunes à rester en bonne santé.'],
+ ['L\'intelligence artificielle permet à l\'enfant de mieux comprendre sa leçon.']
+],
+videos:[['Le présent de l\'indicatif','présent de l\'indicatif 1er et 2e groupe'],['Synonymes et antonymes','synonymes et antonymes cours']],
+games:[
+ {type:'type',title:'✍️ Conjugue au présent',consigne:'Écris le verbe au présent.',qs:[
+  ['Les jeunes (pratiquer) ___ le sport.','pratiquent'],['Nous (aimer) ___ la natation.','aimons'],['Vous (choisir) ___ une activité sportive.','choisissez'],['Les élèves (finir) ___ leur entraînement.','finissent'],['Je (jouer) ___ au handball.','joue'],['Tu (réfléchir) ___ avant de répondre.','réfléchis']]},
+ {type:'sort',title:'🏅 Champ lexical du sport ?',consigne:'Ce mot appartient-il au champ lexical du sport ?',
+  cats:['✅ Sport','❌ Pas sport'],
+  items:[['compétition',0],['natation',0],['athlétisme',0],['ballon',0],['entraînement',0],['cuisine',1],['château',1],['baguette magique',1],['joueur',0],['potion',1]]},
+ {type:'qcm',title:'❓ Quiz',qs:[
+  {q:'Le contraire de « jeune » :',o:['petit','vieux','grand'],a:1},
+  {q:'Un synonyme de « moderne » :',o:['récent','ancien','vieux'],a:0},
+  {q:'« Utilises-tu l\'IA ? » est une phrase :',o:['déclarative','interrogative','exclamative'],a:1},
+  {q:'Dans « Les joueurs pratiquent plusieurs sports », le sujet est :',o:['Les joueurs','pratiquent','plusieurs sports'],a:0},
+  {q:'Le pluriel de « Le jeune pratique le tennis » :',o:['Les jeunes pratique le tennis','Les jeunes pratiquent le tennis','Les jeune pratiquent le tennis'],a:1}
+ ]}
+]}
+];
+
+/* ---------- AIDE EN ARABE ---------- */
+const H={
+conte:{ess:['Un conte = une histoire <b>magique</b> 🪄','4 parties : début calme 😊 ➜ problème 😱 ➜ aventures 🏃 ➜ fin heureuse 🎉'],
+ar:'الحكاية العجيبة قصة خيالية فيها سحر: جنّيات، ساحرات، حيوانات تتكلم. تتكوّن من 4 مراحل:<br>1️⃣ <b>الوضعية الأولية</b>: نقدّم الشخصيات والمكان والزمان، وكل شيء هادئ (Il était une fois).<br>2️⃣ <b>العنصر المغيّر</b>: تحدث مشكلة فجأة (Tout à coup).<br>3️⃣ <b>سلسلة الأحداث</b>: البطل يحاول حلّ المشكلة.<br>4️⃣ <b>الوضعية النهائية</b>: تُحلّ المشكلة وتكون النهاية سعيدة.',
+mots:[['un conte','حكاية'],['merveilleux','عجيب'],['une fée','جنّية'],['une sorcière','ساحرة'],['un château','قصر'],['une baguette magique','عصا سحرية'],['un royaume','مملكة'],['le héros','البطل'],['tout à coup','فجأة'],['une saynète','مسرحية قصيرة']],
+tr:['كان يا ما كان، بنت صغيرة كانت تذهب لقطف الأزهار بعيدًا عن البيت.','فجأة، ساحرة شريرة أخفت الطريق الذي يؤدّي إلى البيت.','«لن ترَي والديكِ أبدًا!» قالت الساحرة. واست الجنّية البنت ووعدتها بمساعدتها على العودة إلى البيت.','سندريلا بنت تُعامَل بقسوة من زوجة أبيها وبناتها. ذات يوم أعلن الأمير عن حفل في المملكة. جاءت جنّية وحوّلت سندريلا إلى أميرة جميلة.']},
+ouverture:{ess:['Le conte commence par : <b>Il était une fois…</b>','Mots de la même famille = ils se ressemblent : <b>magie, magicien, magique</b>'],
+ar:'1️⃣ <b>عبارات الافتتاح</b>: الحكاية تبدأ عادةً بعبارة تأخذنا إلى زمن بعيد: Il était une fois (كان يا ما كان)، Autrefois (في الماضي)، Jadis (قديمًا)، Il y a bien longtemps (منذ زمن بعيد جدًا).<br>2️⃣ <b>كلمات من نفس العائلة</b>: كلمات لها نفس الجذر (radical)، تمامًا مثل العربية: سِحر، ساحر، سِحري ← magie، magicien، magique.',
+mots:[['formule d\'ouverture','عبارة الافتتاح'],['autrefois','في الماضي'],['jadis','قديمًا'],['longtemps','زمن طويل'],['le radical','الجذر'],['la famille','العائلة'],['un magicien','ساحر'],['un jardinier','بستاني'],['un pêcheur','صيّاد'],['un fleuriste','بائع الأزهار']],
+tr:['منذ زمن بعيد جدًا، أراد أمير أن يتزوّج أميرة حقيقية، فقام بجولة حول العالم ليجد واحدة.','كان يا ما كان ساحرة تعيش في قرية بعيدة. كل صباح كانت تحضّر شرابها السحري.','قديمًا، كان ملك عجوز يسكن في قصر على قمّة جبل.']},
+situation:{ess:['Le début du conte dit : <b>Quand ? Qui ? Où ?</b>','Les verbes sont à l\'<b>imparfait</b> : vivait, était, habitait'],
+ar:'الوضعية الأولية هي <b>بداية الحكاية</b>، وتجيب عن 4 أسئلة:<br>⏳ <b>Quand</b> = متى؟ ← Il était une fois<br>👤 <b>Qui</b> = من؟ ← الشخصيات<br>📍 <b>Où</b> = أين؟ ← المكان<br>🎬 <b>Quoi</b> = ماذا يفعل؟<br>ونصرّف الأفعال في <b>الماضي الناقص</b> (imparfait): vivait، était، habitait.',
+mots:[['quand ?','متى؟'],['qui ?','من؟'],['où ?','أين؟'],['quoi ?','ماذا؟'],['pauvre','فقير'],['une cabane','كوخ'],['près de la forêt','قرب الغابة'],['au bord de la mer','على شاطئ البحر'],['il vivait','كان يعيش'],['un bûcheron','حطّاب']],
+tr:['كان يا ما كان، صيّاد وزوجته يعيشان في كوخ صغير قرب الغابة.','منذ زمن طويل، في المكسيك، كانت تعيش ساحرة مخيفة اسمها كوكاراتشا. كانت نحيفة جدًا ويابسة مثل ورقة قديمة.','منذ زمن بعيد جدًا، في غابة، كان حطّاب فقير يقطع الحطب ويبيعه في السوق.','كان يا ما كان رجل وزوجته يعيشان مع ولديهما، ولد وبنت، في خيمة وسط الصحراء.']},
+cc:{ess:['<b>CCL</b> = Où ? 📍','<b>CCT</b> = Quand ? ⏰','<b>CCM</b> = Comment ? 🎨'],
+ar:'المكمّلات الظرفية تعطينا معلومات إضافية في الجملة:<br>📍 <b>CCL</b> مكمّل المكان: يجيب عن <b>أين؟</b> (où)<br>⏰ <b>CCT</b> مكمّل الزمان: يجيب عن <b>متى؟</b> (quand)<br>🎨 <b>CCM</b> مكمّل الكيفية: يجيب عن <b>كيف؟</b> (comment)<br>نطرح السؤال بعد الفعل. الكلمات التي تنتهي بـ ‎-ment‎ غالبًا CCM.',
+mots:[['le lieu','المكان'],['le temps','الزمان'],['la manière','الكيفية'],['où ?','أين؟'],['quand ?','متى؟'],['comment ?','كيف؟'],['gentiment','بلطف'],['joyeusement','بفرح'],['tranquillement','بهدوء'],['au lever du jour','عند طلوع النهار']],
+tr:['كان يا ما كان صيّاد يعيش على شاطئ البحر. ← أين؟ = المكان','الصيّاد وزوجته يسكنان كوخًا بائسًا منذ عدّة سنوات. ← متى؟ = الزمان','كلّمه السمك الذهبي بصوت إنسان وطلب منه بلطف أن يطلق سراحه. ← كيف؟ = الكيفية','كانت البنت الصغيرة تذهب بفرح لزيارة جدّتها. ← كيف؟ = الكيفية']},
+imparfait:{ess:['L\'imparfait = le <b>passé</b> pour <b>décrire</b>','Fins : -ais, -ais, -ait, -ions, -iez, -aient'],
+ar:'<b>الماضي الناقص</b> (imparfait) زمن ماضٍ نستعمله <b>للوصف</b> وللعادات في الماضي، وهو زمن بداية الحكاية.<br>النهايات: je ‎-ais‎ ، tu ‎-ais‎ ، il ‎-ait‎ ، nous ‎-ions‎ ، vous ‎-iez‎ ، ils ‎-aient‎.<br>أفعال المجموعة الثانية (finir) نضيف <b>iss</b>: je finissais.<br>être ← j\'étais (كنتُ) ، avoir ← j\'avais (كان عندي).',
+mots:[['décrire','يصف'],['une habitude','عادة'],['la terminaison','نهاية الفعل'],['le groupe','المجموعة'],['je chantais','كنتُ أغنّي'],['il était','كان'],['il avait','كان عنده'],['finir','يُنهي'],['choisir','يختار'],['réfléchir','يفكّر']],
+tr:['كان يا ما كان ساحرة لها ثلاثة أبناء، كانوا يحبّون بعضهم ويتفاهمون جيدًا.','كانت تظنّ أنهم يريدون أخذ سلطتها. كانت تفكّر لتجد حلًّا.','كان القرويّون سعداء جدًا بأميرتهم.','كنتَ تمسك عود الثقاب فتشتعل النار في الحال.']},
+adjectif:{ess:['Adjectif = un mot qui <b>décrit</b> : petite, belle','Complément du nom = <b>de + nom</b> : une cognée <b>de fer</b>'],
+ar:'1️⃣ <b>الصفة</b> (adjectif): كلمة تصف الاسم، تأتي قبله أو بعده، وتتبعه في التذكير والتأنيث والإفراد والجمع: petit ← petite ← petits ← petites.<br>2️⃣ <b>مكمّل الاسم</b> (complément du nom): يأتي بعد الاسم ويبدأ بـ de أو du أو à أو en، مثل المضاف إليه: jus de pommes = عصير التفاح.',
+mots:[['décrire','يصف'],['masculin','مذكّر'],['féminin','مؤنّث'],['singulier','مفرد'],['pluriel','جمع'],['s\'accorder','يتطابق'],['une hache','فأس'],['de fer','من حديد'],['un thé à la menthe','شاي بالنعناع'],['délicieux','لذيذ']],
+tr:['كان يا ما كان حطّاب فقير يعيش على ضفّة نهر.','كان عنده فأس من حديد لقطع الحطب.','الأطفال الصغار يحبّون عصير التفاح.','وجد الأمير قصرًا كبيرًا. كعكة الحفل لذيذة.']},
+modif:{ess:['Le problème arrive avec : <b>Tout à coup, Soudain, Un jour</b>','gentil ≠ méchant • honnête ≠ malhonnête'],
+ar:'<b>العنصر المغيّر</b> هو المشكلة التي تحدث فجأة وتغيّر الهدوء. نبدؤه بـ: Tout à coup (فجأة)، Soudain (فجأة)، Un jour (ذات يوم).<br>في الحكايات شخصيات <b>طيّبة</b> وشخصيات <b>شرّيرة</b>، نصفها بصفات وأضدادها: honnête (أمين) ≠ malhonnête (غير أمين)، généreux (كريم) ≠ avare (بخيل).',
+mots:[['tout à coup','فجأة'],['soudain','فجأة'],['un jour','ذات يوم'],['honnête','أمين'],['sincère','صادق'],['menteur','كذّاب'],['généreux','كريم'],['avare','بخيل'],['courageux','شجاع'],['peureux','جبان'],['jaloux','حسود / غيور'],['paresseux','كسول']],
+tr:['فجأة، ساحرة شريرة أخفت الطريق إلى البيت.','فجأة، سقط فأس الحطّاب في النهر.','ذات يوم، أعلن الأمير عن حفل في المملكة.','الحطّاب كان أمينًا وصادقًا، لكن جاره كان كذّابًا وبخيلًا.']},
+rappels:{ess:['Présent : je joue, nous jouons, ils jouent','Une question finit par <b>?</b>'],
+ar:'1️⃣ <b>المضارع</b>: نهايات المجموعة الأولى: ‎-e, -es, -e, -ons, -ez, -ent‎ — المجموعة الثانية: ‎-is, -is, -it, -issons, -issez, -issent‎.<br>2️⃣ الفعل يتبع الفاعل: Le jeune pratique ← Les jeunes pratiquent.<br>3️⃣ الجملة <b>الخبرية</b> تنتهي بنقطة (.)، و<b>الاستفهامية</b> بعلامة استفهام (?).<br>4️⃣ <b>المترادف</b> = نفس المعنى، <b>الضدّ</b> = عكس المعنى، <b>الحقل المعجمي</b> = كلمات من نفس الموضوع.',
+mots:[['le sujet','الفاعل'],['le verbe','الفعل'],['phrase déclarative','جملة خبرية'],['phrase interrogative','جملة استفهامية'],['un synonyme','مرادف'],['un contraire','ضدّ'],['le champ lexical','الحقل المعجمي'],['la natation','السباحة'],['l\'entraînement','التدريب'],['en forme','بصحّة جيّدة']],
+tr:['الشباب يمارسون الرياضة. نحن نحبّ السباحة.','أنتم تختارون نشاطًا رياضيًا. التلاميذ يُنهون تدريبهم.','الرياضة تساعد الشباب على البقاء بصحّة جيّدة.','الذكاء الاصطناعي يسمح للطفل بفهم درسه بشكل أفضل.']}
+};
+const ARCONS={qcm:'اختر الجواب الصحيح',sort:'المس الكلمة، ثم المس الصندوق المناسب',order:'المس الجمل بالترتيب الصحيح',memory:'اقلب بطاقتين وابحث عن الزوج المتشابه',type:'اكتب الفعل ثم اضغط ✔'};
+function helpTop(id){const h=H[id];if(!h)return'';
+ return `<div class="box ess"><h3>⭐ L'essentiel (très simple)</h3>${h.ess.map(x=>`<p style="font-size:20px">👉 ${x}</p>`).join('')}</div>
+ <div class="box arh" dir="rtl" style="border-left:none;border-right:10px solid var(--c);text-align:right;font-family:Tajawal,sans-serif;font-size:19px;line-height:1.9"><h3 style="font-family:Tajawal">🇩🇿 الشرح بالعربية</h3>${h.ar}</div>
+ <div class="box arh"><h3>📖 Les mots difficiles <span class="ar">الكلمات الصعبة</span></h3><div class="gl">${h.mots.map(m=>`<div class="gw">${S(m[0])}<b>${m[0]}</b><span class="ar">${m[1]}</span></div>`).join('')}</div></div>
+ <div class="box"><h3>📘 La leçon complète</h3><p style="color:var(--muted)">Si c'est difficile, lis d'abord l'arabe au-dessus 👆</p></div>`}
+
+/* ---------- state ---------- */
+const KEY='fr2am_v1';let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}}
+function addStar(gk,id){saved[gk]=saved[gk]||{};if(!saved[gk][id]){saved[gk][id]=1;save();refresh()}}
+function count(prefix){let n=0;for(const k in saved)if(!prefix||k.startsWith(prefix))n+=Object.keys(saved[k]).length;return n}
+function refresh(){document.getElementById('stars').textContent='⭐ Mes étoiles : '+count();
+  L.forEach(l=>{const el=document.getElementById('pg-'+l.id);if(el)el.textContent='⭐ '+count(l.id+':')});}
+
+/* ---------- game engines ---------- */
+function shell(g,total){const d=document.createElement('div');d.className='game';
+  d.innerHTML=`<div class="ghead"><h3>${g.title}</h3><div><span class="score">⭐ <b class="sc">0</b> / ${total}</span> <button class="btn rs" style="font-size:14px;padding:2px 12px">🔄 Rejouer</button></div></div><div class="consigne">${g.consigne||''} <span class="ar arh">🇩🇿 ${ARCONS[g.type]||''}</span></div><div class="body"></div><div class="win"></div>`;return d}
+function winMsg(d,s,t){const w=d.querySelector('.win');w.style.display='block';
+  w.innerHTML=s===t?'🏆 Parfait ! Bravo champion ! 🎉':s>=t*.7?'👏 Très bien ! '+s+'/'+t:'💪 '+s+'/'+t+' — relis la leçon et rejoue !'}
+
+function gQCM(g,gk,mount){const d=shell(g,g.qs.length);mount(d);const body=d.querySelector('.body');let sc=0,n=0;
+  g.qs.forEach((it,i)=>{const q=document.createElement('div');q.className='q';
+    q.innerHTML=`<b>${i+1}.</b> ${it.q}${it.src?` <small style="color:#888">(${it.src})</small>`:''}<div class="opts"></div><div class="fb"></div>`;
+    const op=q.querySelector('.opts'),fb=q.querySelector('.fb');
+    shuffle(it.o.map((t,k)=>({t,k}))).forEach(({t,k})=>{const b=document.createElement('button');b.className='opt';b.textContent=t;
+      b.onclick=()=>{op.querySelectorAll('button').forEach(x=>x.disabled=true);
+        if(k===it.a){b.classList.add('right');q.classList.add('ok');sc++;fb.innerHTML='🎉 <b>Bravo !</b> '+(it.w||'');if(gk)addStar(gk,i)}
+        else{b.classList.add('wrong');q.classList.add('no');[...op.children].find(x=>x.textContent===it.o[it.a]).classList.add('right');fb.innerHTML='💡 La bonne réponse : <b>'+it.o[it.a]+'</b>. '+(it.w||'')}
+        n++;d.querySelector('.sc').textContent=sc;if(n===g.qs.length)winMsg(d,sc,n)};op.appendChild(b)});
+    body.appendChild(q)});
+  return d}
+
+function gSort(g,gk,mount){const d=shell(g,g.items.length);mount(d);const body=d.querySelector('.body');let sel=null,sc=0,n=0;
+  body.innerHTML='<div class="pool"></div><div class="cats"></div>';const pool=body.querySelector('.pool'),cats=body.querySelector('.cats');
+  const boxes=g.cats.map((c,i)=>{const b=document.createElement('div');b.className='cat';b.innerHTML=`<div class="cn">${c}</div><div class="in"></div>`;cats.appendChild(b);
+    b.onclick=()=>{if(!sel)return;const [t,ci,idx,miss]=sel.data;
+      if(ci===i){sel.el.classList.remove('sel');sel.el.classList.add('done');b.querySelector('.in').appendChild(sel.el);sel.el.onclick=null;
+        if(!sel.el.dataset.miss){sc++;if(gk)addStar(gk,idx)}n++;d.querySelector('.sc').textContent=sc;sel=null;if(n===g.items.length)winMsg(d,sc,n)}
+      else{sel.el.dataset.miss=1;b.classList.add('shake','flash-bad');setTimeout(()=>b.classList.remove('shake','flash-bad'),450)}};return b});
+  shuffle(g.items.map((x,i)=>[x[0],x[1],i])).forEach(([t,ci,idx])=>{const c=document.createElement('span');c.className='chip';c.textContent=t;
+    c.onclick=()=>{pool.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel'));c.classList.add('sel');sel={el:c,data:[t,ci,idx]};speak(t)};pool.appendChild(c)});
+  return d}
+
+function gOrder(g,gk,mount){const d=shell(g,g.items.length);mount(d);const body=d.querySelector('.body');let next=0,sc=0;
+  body.innerHTML='<div class="olist"></div><div class="rest"></div>';const ol=body.querySelector('.olist'),rest=body.querySelector('.rest');
+  shuffle(g.items.map((t,i)=>({t,i}))).forEach(({t,i})=>{const c=document.createElement('div');c.className='ocard';c.textContent=t;
+    c.onclick=()=>{if(i===next){c.remove();const o=document.createElement('div');o.className='oitem';o.textContent=(next+1)+'. '+t;ol.appendChild(o);
+        if(!c.dataset.miss){sc++;if(gk)addStar(gk,i)}next++;d.querySelector('.sc').textContent=sc;if(next===g.items.length){winMsg(d,sc,next);speak(g.items.join(' '))}}
+      else{c.dataset.miss=1;c.classList.add('shake','flash-bad');setTimeout(()=>c.classList.remove('shake','flash-bad'),450)}};rest.appendChild(c)});
+  return d}
+
+function gMemory(g,gk,mount){const d=shell(g,g.pairs.length);mount(d);const body=d.querySelector('.body');let open=[],sc=0,lock=false;
+  body.innerHTML='<div class="mem"></div>';const m=body.querySelector('.mem');
+  const cards=shuffle(g.pairs.flatMap((p,i)=>[{t:p[0],i},{t:p[1],i}]));
+  cards.forEach(cd=>{const c=document.createElement('div');c.className='mc';c.textContent='❓';
+    c.onclick=()=>{if(lock||c.classList.contains('up')||c.classList.contains('got'))return;c.classList.add('up');c.textContent=cd.t;speak(cd.t);open.push([c,cd]);
+      if(open.length===2){lock=true;const[[a,x],[b,y]]=open;
+        if(x.i===y.i){setTimeout(()=>{a.className=b.className='mc got';sc++;if(gk)addStar(gk,x.i);d.querySelector('.sc').textContent=sc;open=[];lock=false;if(sc===g.pairs.length)winMsg(d,sc,sc)},350)}
+        else setTimeout(()=>{a.className=b.className='mc';a.textContent=b.textContent='❓';open=[];lock=false},900)}};m.appendChild(c)});
+  return d}
+
+function gType(g,gk,mount){const d=shell(g,g.qs.length);mount(d);const body=d.querySelector('.body');let sc=0,n=0;
+  g.qs.forEach(([q,a],i)=>{const r=document.createElement('div');r.className='q';
+    r.innerHTML=`<b>${i+1}.</b> ${q.replace('___','<b style="color:var(--c2)">___</b>')}<div class="ti"><input autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ta réponse"><button>✔</button><button class="sh" style="display:none">👀 Réponse</button></div><div class="ans"></div>`;
+    const inp=r.querySelector('input'),ok=r.querySelector('button'),sh=r.querySelector('.sh'),ans=r.querySelector('.ans');let tries=0,done=false;
+    const check=()=>{if(done)return;const v=norm(inp.value);if(!v)return;
+      if(v===norm(a)){done=true;inp.className='okk';inp.disabled=true;r.classList.add('ok');ans.innerHTML='🎉 Bravo !';if(tries===0){sc++;if(gk)addStar(gk,i)}n++;d.querySelector('.sc').textContent=sc;speak(q.replace(/\(.*?\)\s*___/,a));if(n===g.qs.length)winMsg(d,sc,n)}
+      else{tries++;inp.className='bad';inp.classList.add('shake');setTimeout(()=>inp.classList.remove('shake'),450);ans.textContent='Essaie encore ! Regarde bien la terminaison.';if(tries>=2)sh.style.display='inline-block'}};
+    ok.onclick=check;inp.onkeydown=e=>{if(e.key==='Enter')check()};
+    sh.onclick=()=>{if(done)return;done=true;inp.value=a;inp.disabled=true;r.classList.add('no');ans.innerHTML='La réponse : <b>'+a+'</b>';n++;if(n===g.qs.length)winMsg(d,sc,n)};
+    body.appendChild(r)});
+  return d}
+
+const ENG={qcm:gQCM,sort:gSort,order:gOrder,memory:gMemory,type:gType};
+function mountGame(holder,g,gk){const place=document.createElement('div');holder.appendChild(place);
+  const build=()=>{const d=ENG[g.type](g,gk,el=>{place.innerHTML='';place.appendChild(el)});d.querySelector('.rs').onclick=build};build()}
+
+/* ---------- build pages ---------- */
+const grid=document.getElementById('grid'),host=document.getElementById('lessons');
+L.forEach((l,i)=>{
+  const c=document.createElement('div');c.className='card';c.style.setProperty('--c',l.c);
+  c.innerHTML=`<div class="num">${i+1}</div><div class="emo">${l.emo}</div><div class="ttl">${l.t}</div><div class="mini">${l.mini}</div><div class="prog" id="pg-${l.id}"></div>`;
+  c.onclick=()=>go(l.id);grid.appendChild(c);
+  const s=document.createElement('section');s.className='lesson';s.id='l-'+l.id;s.style.setProperty('--c',l.c);s.style.setProperty('--c2',l.c2);
+  const prev=L[i-1],next=L[i+1];
+  s.innerHTML=`<div class="top"><button class="btn" onclick="go('')">🏠 Toutes les leçons</button><span style="color:var(--muted)">Leçon ${i+1} / ${L.length}</span></div>
+  <div class="banner"><div class="emo">${l.emo}</div><div><h2>${l.t}</h2><small>${l.mini}</small></div></div>
+  <div class="tabs"><button class="tab on" data-p="lecon">📘 Leçon</button><button class="tab" data-p="ex">🔊 Exemples</button><button class="tab" data-p="jeux">🎮 Jeux</button><button class="tab" data-p="vid">▶️ Vidéos</button></div>
+  <div class="pane on" data-p="lecon">${helpTop(l.id)}${l.lecon}<div style="text-align:center;margin-top:16px"><button class="btn gonext" data-p="ex">Voir les exemples ➜</button></div></div>
+  <div class="pane" data-p="ex"><div class="consigne">Appuie sur 🔊 pour écouter la phrase.</div>${l.exemples.map((e,k)=>EX(e[0],e[1],(H[l.id]||{tr:[]}).tr[k])).join('')}<div style="text-align:center;margin-top:16px"><button class="btn gonext" data-p="jeux">À toi de jouer ! 🎮</button></div></div>
+  <div class="pane" data-p="jeux"></div>
+  <div class="pane" data-p="vid"><div class="consigne">Ces liens ouvrent une recherche YouTube sur la leçon. Choisis une vidéo courte pour ton niveau 😉 <span class="ar">اطلب من أحد والديك مرافقتك</span></div>
+   ${l.videos.map(v=>`<a class="vid" href="${yt(v[1])}" target="_blank" rel="noopener">▶️ ${v[0]}<small>YouTube — « ${v[1]} »</small></a>`).join('')}</div>
+  <div class="nav2">${prev?`<button class="btn" onclick="go('${prev.id}')">⬅ ${prev.t}</button>`:'<span></span>'}${next?`<button class="btn" onclick="go('${next.id}')">${next.t} ➜</button>`:`<button class="btn" onclick="go('defi')">⏱️ Défi chrono ➜</button>`}</div>`;
+  host.appendChild(s);
+  const jeux=s.querySelector('.pane[data-p="jeux"]');l.games.forEach((g,gi)=>mountGame(jeux,g,l.id+':'+gi));
+  const setTab=p=>{s.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.p===p));s.querySelectorAll('.pane').forEach(t=>t.classList.toggle('on',t.dataset.p===p))};
+  s.querySelectorAll('.tab,.gonext').forEach(t=>t.onclick=()=>{setTab(t.dataset.p);s.querySelector('.tabs').scrollIntoView({behavior:'smooth'})});
+});
+
+/* défi chrono */
+const dc=document.createElement('div');dc.className='card';dc.style.setProperty('--c','#2B2D42');
+dc.innerHTML=`<div class="num">⏱️</div><div class="emo">⏱️</div><div class="ttl">Défi chrono</div><div class="mini">Questions de toutes les leçons, 90 secondes !</div>`;dc.onclick=()=>go('defi');grid.appendChild(dc);
+const ds=document.createElement('section');ds.className='lesson';ds.id='l-defi';ds.style.setProperty('--c','#2B2D42');ds.style.setProperty('--c2','#2B2D42');
+ds.innerHTML=`<div class="top"><button class="btn" onclick="go('')">🏠 Toutes les leçons</button></div>
+<div class="banner"><div class="emo">⏱️</div><div><h2>Défi chrono</h2><small>Réponds au maximum de questions en 90 secondes !</small></div></div>
+<div class="game" style="text-align:center"><div class="timer" id="tm">90</div><div>Score : <b id="dsc">0</b> — Record : <b id="rec">0</b></div>
+<div id="dq" style="margin-top:10px"></div><button class="btn" id="dstart" style="margin-top:12px">▶️ Commencer</button></div>`;
+host.appendChild(ds);
+const POOL=L.flatMap(l=>l.games.filter(g=>g.type==='qcm').flatMap(g=>g.qs.map(q=>Object.assign({src:l.t},q))));
+let rec=0;try{rec=+localStorage.getItem(KEY+'rec')||0}catch(e){}document.getElementById('rec').textContent=rec;
+let timer=null;
+document.getElementById('dstart').onclick=function(){let t=90,sc=0,qs=shuffle(POOL),k=0;this.style.display='none';
+  const tm=document.getElementById('tm'),dq=document.getElementById('dq');document.getElementById('dsc').textContent=0;
+  const show=()=>{const it=qs[k%qs.length];k++;dq.innerHTML=`<div class="q" style="text-align:left"><b>${it.q}</b><div class="opts"></div></div>`;
+    const op=dq.querySelector('.opts');shuffle(it.o.map((x,i)=>({x,i}))).forEach(({x,i})=>{const b=document.createElement('button');b.className='opt';b.textContent=x;
+      b.onclick=()=>{op.querySelectorAll('button').forEach(z=>z.disabled=true);if(i===it.a){b.classList.add('right');sc++;document.getElementById('dsc').textContent=sc}else{b.classList.add('wrong');[...op.children].find(z=>z.textContent===it.o[it.a]).classList.add('right')}setTimeout(()=>{if(t>0)show()},i===it.a?350:1100)};op.appendChild(b)})};
+  show();clearInterval(timer);timer=setInterval(()=>{t--;tm.textContent=t;if(t<=0){clearInterval(timer);
+    if(sc>rec){rec=sc;try{localStorage.setItem(KEY+'rec',rec)}catch(e){}document.getElementById('rec').textContent=rec}
+    dq.innerHTML=`<div class="win" style="display:block">⏰ Temps écoulé ! Score : ${sc} ${sc>=rec&&sc>0?'— 🏆 Nouveau record !':''}</div>`;document.getElementById('dstart').style.display='inline-block';document.getElementById('dstart').textContent='🔄 Rejouer'}},1000)};
+
+/* routing */
+function show(id){document.getElementById('home').style.display=id?'none':'block';document.querySelectorAll('section.lesson').forEach(x=>x.classList.toggle('show',x.id==='l-'+id));window.scrollTo(0,0)}
+function go(id){if(location.hash.slice(1)===id)show(id);else{location.hash=id||'';if(!id)show('')}}
+window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
+show(location.hash.slice(1));refresh();
+try{speechSynthesis.getVoices()}catch(e){}
+(function(){const b=document.getElementById('artog');let on=true;try{on=localStorage.getItem(KEY+'ar')!=='0'}catch(e){}
+ const ap=()=>{document.body.classList.toggle('noar',!on);b.textContent='🇩🇿 Aide en arabe : '+(on?'OUI':'NON')};ap();
+ b.onclick=()=>{on=!on;try{localStorage.setItem(KEY+'ar',on?'1':'0')}catch(e){}ap()}})();
+</script>
+</body>
+</html>
